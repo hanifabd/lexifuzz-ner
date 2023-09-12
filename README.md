@@ -3,6 +3,11 @@
 ## **About**
 LexiFuzz NER is a Named Entity Recognition (NER) package designed to identify and extract named entities from unstructured text data. Leveraging a combination of dictionary-based and fuzzy matching techniques, LexiFuzz NER offers state-of-the-art accuracy in recognizing named entities in various domains, making it an invaluable tool for information extraction, natural language understanding, and text analytics.
 
+## **Requirements**
+- Python 3.7 or Higher
+- NLTK
+- TheFuzz
+
 ## **Key Features**
 
 1. **Dictionary-Based Recognition**: LexiFuzz NER utilizes a comprehensive dictionary of named entities, encompassing a wide range of entities such as person names, organizations, locations, dates, and more. This dictionary is continuously updated to ensure high precision in entity recognition.
@@ -12,11 +17,22 @@ LexiFuzz NER is a Named Entity Recognition (NER) package designed to identify an
 3. **Customization**: LexiFuzz NER allows users to easily customize and expand the entity dictionary to suit specific domain or application requirements. This flexibility makes it adaptable to a wide array of use cases.
 
 ## Usage
+### Manual Installation via Github
+1. Clone Repository
+    ```
+    git clone https://github.com/hanifabd/lexifuzz-ner.git
+    ```
+2. Installation
+    ```
+    cd lexifuzz-ner && pip install .
+    ```
+### Installation Using Pip
 1. Installation
     ```sh
     pip install lexifuzz-ner
     ```
-2. Inference
+### Inference
+1. Usage
     ```py
     from lexifuzz_ner.ner import find_entity
 
