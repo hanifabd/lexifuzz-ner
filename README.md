@@ -18,18 +18,37 @@ LexiFuzz NER is a Named Entity Recognition (NER) package designed to identify an
     ```
 2. Inference
     ```py
-    import lexifuzz_ner
+    from lexifuzz_ner.ner import find_entity
 
     dictionary = {
-        'individual_product' : ['tahapan', 'xpresi', 'gold'],
+        'individual_product' : ['tahapan', 'xpresi', 'gold', 'berjangka'],
         'brand' : ["bca", "bank central asia"]
     }
 
-    # text = "mau nanya soal tabungan tahapan bnak central asia dong"
-    # text = "Bank Central Asia has individual savings product such as Tahapan, Tahapan Xpresi, Tahapan Gold"
-
     text = "i wanna ask about bca tahapan savings product"
-
     entities = find_entity(text, dictionary, 90)
-    entities
+    print(entities)
+    ```
+
+3. Result
+    ```md
+    {
+        'entities': [
+            {
+                'id': '55a20c6b-bd4a-43ee-8853-b961ac537ca8',
+                'entity': 'bca',
+                'category': 'brand',
+                'score': 100,
+                'index': {'start': 18, 'end': 20}},
+            {
+                'id': '08917da5-ed51-44bb-9be9-52f17df2640a',
+                'entity': 'tahapan',
+                'category': 'individual_product',
+                'score': 100,
+                'index': {'start': 22, 'end': 28}
+            }
+        ],
+        'text': 'i wanna ask about bca tahapan savings product',
+        'text_annotated': 'i wanna ask about [bca]{55a20c6b-bd4a-43ee-8853-b961ac537ca8} [tahapan]{08917da5-ed51-44bb-9be9-52f17df2640a} savings product'
+    }
     ```
