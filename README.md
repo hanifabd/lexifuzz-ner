@@ -41,7 +41,7 @@ LexiFuzz NER is a Named Entity Recognition (NER) package designed to identify an
         'brand' : ["bca", "bank central asia"]
     }
 
-    text = "i wanna ask about bca tahapan savings product"
+    text = "i wanna ask about bca tahapn savings product"
     entities = find_entity(text, dictionary, 90)
     print(entities)
     ```
@@ -58,9 +58,9 @@ LexiFuzz NER is a Named Entity Recognition (NER) package designed to identify an
                 'index': {'start': 18, 'end': 20}},
             {
                 'id': '08917da5-ed51-44bb-9be9-52f17df2640a',
-                'entity': 'tahapan',
+                'entity': 'tahapn',
                 'category': 'individual_product',
-                'score': 100,
+                'score': 92,
                 'index': {'start': 22, 'end': 28}
             }
         ],
