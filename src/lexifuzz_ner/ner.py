@@ -11,6 +11,8 @@ def getFuzzySimilarity(token=None, dictionary=None, min_ratio=None):
     """
     This function uses the TheFuzz library to find the highest matching similary score of a token in a list of values.
     We then compare the similary score of the fuzzy match with our minimum threshold and return a match if the match > treshold.
+
+    Source: https://medium.com/tailo-ai/fuzzy-matching-entities-in-a-custom-entity-dictionary-310158d2b60e
     """
 
     # Check for appropriate formats
