@@ -1,6 +1,7 @@
 LICENSE
 README.md
 pyproject.toml
+setup.py
 src/lexifuzz_ner/__init__.py
 src/lexifuzz_ner/ner.py
 src/lexifuzz_ner.egg-info/PKG-INFO

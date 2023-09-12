@@ -1,6 +1,10 @@
 [build-system]
-requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
+requires = [
+  "setuptools>=61.0",
+  "thefuzz",
+  "nltk"
+] 
 
 [project]
 name = "lexifuzz-ner"
@@ -19,9 +23,3 @@ classifiers = [
 
 [project.urls]
 "Repository" = "https://github.com/hanifabd/lexifuzz-ner"
-
-dependencies = [
-    "thefuzz",
-    "nltk",
-]
-dynamic = ["version"]
