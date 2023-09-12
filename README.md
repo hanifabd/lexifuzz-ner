@@ -64,7 +64,7 @@ LexiFuzz NER is a Named Entity Recognition (NER) package designed to identify an
                 'index': {'start': 22, 'end': 28}
             }
         ],
-        'text': 'i wanna ask about bca tahapan savings product',
-        'text_annotated': 'i wanna ask about [bca]{55a20c6b-bd4a-43ee-8853-b961ac537ca8} [tahapan]{08917da5-ed51-44bb-9be9-52f17df2640a} savings product'
+        'text': 'i wanna ask about bca tahapn savings product',
+        'text_annotated': 'i wanna ask about [bca]{55a20c6b-bd4a-43ee-8853-b961ac537ca8} [tahapn]{08917da5-ed51-44bb-9be9-52f17df2640a} savings product'
     }
     ```
