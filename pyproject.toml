@@ -1,18 +1,14 @@
 [build-system]
 build-backend = "setuptools.build_meta"
 requires = [
-  "setuptools>=61.0",
-  "thefuzz",
-  "nltk"
-] 
+  "setuptools>=61.0"
+]
 
-[project]
+[tool.poetry]
 name = "lexifuzz-ner"
 version = "0.0.1"
-authors = [
-  { name="Hanif Yuli Abdillah P", email="hanifabd23@gmail.com" },
-]
-description = "Python package for detect entity in a text based on dictionary and fuzzy similarity"
+authors = "Hanif Yuli Abdillah P <hanifabd23@gmail.com>"
+description = "Python package for detecting entities in text based on a dictionary and fuzzy similarity"
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [
@@ -21,5 +17,9 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 
-[project.urls]
-"Repository" = "https://github.com/hanifabd/lexifuzz-ner"
+[tool.poetry.dependencies]
+python = ">=3.7"
+thefuzz = "*"
+nltk = "*"
+
+[tool.poetry.dev-dependencies]
