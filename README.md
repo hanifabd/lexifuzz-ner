@@ -1,6 +1,6 @@
 # **LexiFuzz NER: Named Entity Recognition Based on Dictionary and Fuzzy Matching**
 
-![Image](assets\lexifuzz-mascot.png)
+![Image](https://github.com/hanifabd/lexifuzz-ner/blob/master/assets/lexifuzz-mascot.png)
 
 ## **About**
 LexiFuzz NER is a Named Entity Recognition (NER) package designed to identify and extract named entities from unstructured text data. Leveraging a combination of dictionary-based and fuzzy matching techniques, LexiFuzz NER offers state-of-the-art accuracy in recognizing named entities in various domains, making it an invaluable tool for information extraction, natural language understanding, and text analytics.
