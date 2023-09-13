@@ -113,9 +113,9 @@ def find_entity(text=None, dictionary=None, min_ratio=None):
   result_detection['entities'] = []
   tokens = text.split()
   max_ngrams = max([max(len(phrase.split()) for phrase in phrases) for phrases in dictionary.values()])
-  current_index = 0
   for n in range(1, max_ngrams+1):
     ngrams_result = list(ngrams(tokens, n))
+    current_index = 0
     for result in ngrams_result:
       compared_text = ' '.join(result)
       similarity_score = getFuzzySimilarity(token = compared_text, dictionary = dictionary, min_ratio = min_ratio)
@@ -141,6 +141,7 @@ def find_entity(text=None, dictionary=None, min_ratio=None):
                 }
             }
         )
+  result_detection['entities'] = sorted(result_detection['entities'], key=lambda x: x['index']['start'])
   result_detection = handle_slicing(result_detection)
   result_detection['text'] = text
   result_detection['text_annotated'] = annotate_text(result_detection)
