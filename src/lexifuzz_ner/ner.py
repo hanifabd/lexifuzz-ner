@@ -19,7 +19,7 @@ def getFuzzySimilarity(token=None, dictionary=None, min_ratio=None):
     assert isinstance(token, str), "Tokens can be str() type only"
     assert isinstance(dictionary, dict), "Dictionary format should be provided in the dictionary parameter."
     assert isinstance(min_ratio, int), "Integer format should be provided in the minimum-ratio parameter."
-    
+
     for key, values in dictionary.items():
         # Using the process option of FuzzyWuzzy, we can search through the entire dictionary for the best match
         match = process.extractOne(token, values, scorer = fuzz.ratio)
@@ -122,12 +122,15 @@ def find_entity(text=None, dictionary=None, min_ratio=None):
       if not similarity_score == None:
         # Find the start and end indices correctly using current_index
         start_index = text.find(compared_text, current_index)
-        if start_index == -1:
-          start_index = 0
+        # if start_index == -1:
+        #   start_index = 0
         end_index = start_index + len(compared_text) - 1
 
-        # Update current_index to start searching for the next occurrence after the current one
-        current_index = end_index + 1
+        # Update current_index to start searching for the next occurrence after the current one. For ngram > 1, current_index will be back to the second index of the ngram value
+        if n == 1:
+          current_index = end_index + 1
+        else:
+          current_index = end_index - (len(compared_text.split(' ', 1)[1]) + 1)
 
         result_detection['entities'].append(
             {
