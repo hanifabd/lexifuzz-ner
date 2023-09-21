@@ -29,7 +29,6 @@ def getFuzzySimilarity(token=None, dictionary=None, min_ratio=None):
             return (match + (key, ))
 
 def handle_slicing(data=None):
-
   """
     This function takes a dictionary data as input and processes its 'entities' by sorting them based on their score in descending order.
     It then identifies entities with the highest scores, ensuring there is no overlap in their index ranges.
@@ -39,7 +38,7 @@ def handle_slicing(data=None):
   assert isinstance(data, dict), "Dictionary format should be provided in the dictionary parameter."
 
   # Sort entities by their score in descending order
-  sorted_entities = sorted(data['entities'], key=lambda x: -x['score'])
+  sorted_entities = sorted(data['entities'], key=lambda x: (-x['score'], x['index']['start'], -x['index']['end']))
 
   # Initialize a dictionary to keep track of which indices have been covered
   indices_covered = set()
@@ -53,14 +52,11 @@ def handle_slicing(data=None):
       # Check if the entity's indices overlap with previously covered indices
       if all(start > end_covered or end < start_covered for start_covered, end_covered in indices_covered):
           new_entities.append(entity)
-
           # Update the covered indices
           indices_covered.add((start, end))
 
   # Update the entities in the data dictionary
   data['entities'] = new_entities
-
-  # Print the modified data
   return data
 
 def annotate_text(entities = None):
