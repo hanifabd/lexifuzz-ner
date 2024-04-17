@@ -56,7 +56,7 @@ def handle_slicing(data=None):
           indices_covered.add((start, end))
 
   # Update the entities in the data dictionary
-  data['entities'] = new_entities
+  data['entities'] = sorted(new_entities, key=lambda x: (x['index']['start']))
   return data
 
 def annotate_text(entities = None):
