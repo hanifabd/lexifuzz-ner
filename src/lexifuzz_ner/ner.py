@@ -132,6 +132,7 @@ def find_entity(text=None, dictionary=None, min_ratio=None):
             {
                 "id": str(uuid4()),
                 "entity": compared_text,
+                "similar_with": similarity_score[0],
                 "category": similarity_score[-1],
                 "score": similarity_score[1],
                 "index": {
