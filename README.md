@@ -51,22 +51,31 @@ LexiFuzz NER is a Named Entity Recognition (NER) package designed to identify an
 3. Result
     ```md
     {
-        'entities': [
+        "entities": [
             {
-                'id': '55a20c6b-bd4a-43ee-8853-b961ac537ca8',
-                'entity': 'bca',
-                'category': 'brand',
-                'score': 100,
-                'index': {'start': 18, 'end': 20}},
+                "id": "fa8d7946-436e-4114-baf2-7d248d193755",
+                "entity": "bca",
+                "similar_with": "bca",
+                "category": "brand",
+                "score": 100,
+                "index": {
+                    "start": 18,
+                    "end": 20
+                }
+            },
             {
-                'id': '08917da5-ed51-44bb-9be9-52f17df2640a',
-                'entity': 'tahapn',
-                'category': 'individual_product',
-                'score': 92,
-                'index': {'start': 22, 'end': 28}
+                "id": "a65184bd-46d0-4202-ad25-57ababd00f44",
+                "entity": "tahapn",
+                "similar_with": "tahapan",
+                "category": "individual_product",
+                "score": 92,
+                "index": {
+                    "start": 22,
+                    "end": 27
+                }
             }
         ],
-        'text': 'i wanna ask about bca tahapn savings product',
-        'text_annotated': 'i wanna ask about [bca]{55a20c6b-bd4a-43ee-8853-b961ac537ca8} [tahapn]{08917da5-ed51-44bb-9be9-52f17df2640a} savings product'
+        "text": "i wanna ask about bca tahapn savings product",
+        "text_annotated": "i wanna ask about [bca]{fa8d7946-436e-4114-baf2-7d248d193755} [tahapn]{a65184bd-46d0-4202-ad25-57ababd00f44} savings product"
     }
     ```
